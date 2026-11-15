@@ -1,0 +1,1078 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>St. Martin 2027</title><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FBF8F1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="St. Martin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalnia:wght@400;500;600&family=Mrs+Saint+Delafield&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: a phone-width travel-guide "app" — cream screens, greige bands, line-icon menu, arched illustrated frames, icon dock. Single light look by design. */
+:root{
+  --paper:#FBF8F1; --greige:#E7E0D4; --greige-2:#D9D0C1; --outer:#EDEAE4;
+  --ink:#1F1D1A; --taupe:#857B6C; --taupe-soft:#B3AA9C; --line:#E2DACC;
+  --sea:#3C978E; --rust:#9A5B45;
+  --f-display:"Kalnia","Bodoni Moda",Didot,"Times New Roman",serif;
+  --f-script:"Mrs Saint Delafield","Snell Roundhand","Brush Script MT",cursive;
+  --f-sans:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{background:var(--outer);color:var(--ink)}
+body{font-family:var(--f-sans);font-size:16px;line-height:1.5}
+button{font:inherit;color:inherit}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+
+.app{max-width:480px;margin:0 auto;background:var(--paper);min-height:100vh;position:relative;padding-bottom:calc(128px + env(safe-area-inset-bottom,0px))}
+@media (min-width:560px){.app{margin:28px auto;min-height:calc(100vh - 56px);border-radius:36px;box-shadow:0 30px 60px -30px rgba(70,58,40,.35),0 0 0 1px rgba(70,58,40,.06);overflow:hidden}}
+.g{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding-block:18px 6px}
+.burger{width:44px;height:44px;border:0;background:none;display:grid;place-content:center;gap:5px;cursor:pointer;margin-left:-8px}
+.burger span{display:block;width:26px;height:3px;border-radius:2px;background:var(--taupe-soft)}
+.kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);font-weight:500}
+
+/* titles */
+.ttl{padding-block:6px 18px;position:relative}
+.ttl h1{font-family:var(--f-display);font-weight:500;font-size:clamp(2.6rem,12vw,3.4rem);line-height:1;letter-spacing:-.01em;margin:0}
+.ttl .script{font-family:var(--f-script);font-size:clamp(2.6rem,12vw,3.5rem);line-height:1;color:var(--ink);display:block;margin:-6px 0 0 34%;white-space:nowrap}
+.ttl p{margin:12px 0 0;color:var(--taupe);font-size:.95rem;max-width:34ch}
+.caps{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--taupe)}
+.band{background:var(--greige)}
+.screen[hidden]{display:none!important}
+.stack{display:flex;flex-direction:column;gap:22px;padding-block:8px 28px}
+h2.sec{font-family:var(--f-display);font-weight:500;font-size:1.6rem;margin:0;line-height:1.1}
+h3{font-family:var(--f-display);font-weight:500;font-size:1.25rem;margin:0;line-height:1.15}
+p{margin:0}
+.muted{color:var(--taupe)}
+.small{font-size:.9rem}
+
+/* home */
+.home-head{text-align:center;padding-block:22px 26px}
+.home-head h1{font-family:var(--f-display);font-weight:500;font-size:clamp(3rem,15vw,4.1rem);line-height:.95;margin:0}
+.home-head .script{font-family:var(--f-script);font-size:clamp(2.6rem,12vw,3.4rem);display:block;line-height:1;margin-top:2px}
+.home-count{display:flex;justify-content:center;align-items:baseline;gap:10px;margin-top:14px}
+.home-count b{font-family:var(--f-display);font-weight:500;font-size:2.3rem;line-height:1}
+.home-count span{font-family:var(--f-script);font-size:2rem;line-height:1}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 6px;padding-block:30px 34px}
+.menu a{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--taupe);text-align:center;padding:4px 0;border-radius:14px}
+.menu a:hover{color:var(--ink)}
+.menu svg{width:58px;height:58px}
+.menu .lbl{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:500;line-height:1.3}
+.home-foot{text-align:center;padding-block:22px 6px}
+
+/* icons */
+.ico{fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+
+/* dock */
+.dock{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,480px);background:var(--greige);z-index:6;padding-top:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:repeat(6,1fr);gap:0 2px}
+@media (min-width:560px){.dock{bottom:28px;border-radius:0 0 36px 36px;padding-bottom:14px}}
+.dock[hidden]{display:none}
+.dock a{display:grid;place-items:center;height:48px;color:var(--taupe-soft);border-radius:12px;position:relative}
+.dock a svg{width:30px;height:30px}
+.dock a[aria-current="page"]{color:var(--ink)}
+.dock a[aria-current="page"]::after{content:"";position:absolute;bottom:3px;width:4px;height:4px;border-radius:50%;background:var(--ink)}
+
+/* arch art */
+.arch{border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/4.4;max-width:100%;position:relative;background:var(--greige)}
+.arch svg{display:block;width:100%;height:100%}
+.arch.wide{aspect-ratio:4/3.2;border-radius:160px 160px 22px 22px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--greige);color:var(--taupe);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:99px;border:0;text-decoration:none;white-space:nowrap}
+.pill.dark{background:var(--ink);color:var(--paper)}
+.pill.sea{background:#D7EAE6;color:#2D7069}
+.pill.rust{background:#F1E1D8;color:var(--rust)}
+button.pill,a.pill{cursor:pointer}
+.arch .pill{position:absolute;left:14px;top:46%;background:rgba(251,248,241,.9);color:var(--taupe)}
+
+/* split layout (accommodation) */
+.split{display:grid;grid-template-columns:58px 1fr;gap:0}
+.vert{background:var(--greige);display:block;padding-block:24px}
+.vert h1{position:sticky;top:calc(24px + env(safe-area-inset-top,0px));margin:0 auto!important;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--f-display);font-weight:500;font-size:2.4rem;margin:0;line-height:1;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.vert h1 em{font-family:var(--f-script);font-style:normal;font-size:2.6rem}
+
+/* info grid with script labels */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;text-align:center}
+.info .k{font-family:var(--f-script);font-size:1.75rem;line-height:1;color:var(--ink)}
+.info .v{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:500;margin-top:4px;word-break:break-word}
+.info .v.miss{color:var(--rust)}
+
+/* plain card */
+.card{background:#fff;border-radius:22px;padding:18px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line)}
+.card.soft{background:var(--greige);box-shadow:none}
+.card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.card li{font-size:.95rem}
+
+/* day circles */
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px;justify-items:center}
+.day{width:72px;height:72px;border-radius:50%;border:0;background:var(--greige-2);color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.day b{font-size:.68rem;letter-spacing:.14em;font-weight:600;text-transform:uppercase;color:var(--taupe)}
+.day span{font-family:var(--f-display);font-size:1.02rem;white-space:nowrap}
+.day[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.day[aria-pressed="true"] b{color:var(--taupe-soft)}
+.day.unknown{background:transparent;border:1.5px dashed var(--taupe-soft)}
+.plan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.plan li{display:grid;grid-template-columns:76px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.plan li:first-child{border-top:0}
+.plan .t{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);font-weight:600;padding-top:3px}
+
+/* dates */
+.dates{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.dates li{display:grid;grid-template-columns:62px 1fr;gap:14px;align-items:center;background:#fff;border-radius:18px;padding:12px 14px}
+.dates li.past{opacity:.5}
+.cal{background:var(--greige);border-radius:12px;text-align:center;padding:6px 0;line-height:1.05}
+.cal b{display:block;font-size:.64rem;letter-spacing:.14em;color:var(--taupe);font-weight:600}
+.cal span{font-family:var(--f-display);font-size:1.35rem}
+.dates .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+
+/* checklists */
+.prog{display:flex;align-items:center;gap:12px}
+.prog .bar{flex:1;height:5px;background:var(--greige-2);border-radius:99px;overflow:hidden}
+.prog .bar span{display:block;height:100%;background:var(--sea);width:0;transition:width .3s}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.checks li{background:#fff;border-radius:18px;display:flex;align-items:flex-start}
+.checks label{flex:1;display:grid;grid-template-columns:26px 1fr;gap:12px;padding:14px 4px 14px 16px;cursor:pointer;min-width:0}
+.checks input{appearance:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--taupe-soft);margin:2px 0 0;display:grid;place-items:center;cursor:pointer;background:#fff}
+.checks input:checked{background:var(--sea);border-color:var(--sea)}
+.checks input:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.checks .tx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.checks .tx b{font-weight:500;font-size:1rem}
+.checks .tx small{color:var(--taupe);font-size:.88rem}
+.checks .tx ul{margin:2px 0 0;padding-left:16px;color:var(--taupe);font-size:.88rem}
+.checks li.done .tx b{text-decoration:line-through;color:var(--taupe-soft)}
+.checks .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.del{border:0;background:none;color:var(--taupe-soft);font-size:1.3rem;padding:12px 14px;cursor:pointer;line-height:1}
+.add{display:flex;gap:8px}
+.add input{flex:1;min-width:0;font:inherit;padding:12px 16px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn{font:inherit;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:0 20px;border-radius:99px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.sync{font-size:.82rem;color:var(--taupe);text-align:center}
+
+/* place cards */
+.places{display:grid;grid-template-columns:1fr 1fr;gap:20px 14px}
+.place{display:flex;flex-direction:column;gap:8px;text-align:center}
+.place .arch{aspect-ratio:3/3.7}
+.place h3{font-size:1.1rem}
+.place p{font-size:.86rem;color:var(--taupe);text-align:left}
+.place .meta{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:600}
+.ruled{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.ruled li{font-size:.92rem;color:var(--taupe)}
+.ruled b{color:var(--ink);font-weight:500;text-decoration:line-through;text-decoration-color:var(--rust)}
+
+/* food */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{border:0;cursor:pointer;background:var(--greige);color:var(--taupe);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:8px 14px;border-radius:99px}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.food{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.food li{background:#fff;border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:2px 12px}
+.food .nm{font-family:var(--f-display);font-size:1.12rem;line-height:1.2}
+.food .pr{font-size:.82rem;letter-spacing:.06em;color:var(--ink);font-weight:500;text-align:right;white-space:nowrap;padding-top:2px}
+.food .ds{grid-column:1/-1;font-size:.88rem;color:var(--taupe)}
+.food .tg{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+
+/* drivers */
+.contact{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:4px}
+.phone{font-size:.95rem;letter-spacing:.04em;user-select:all;font-variant-numeric:tabular-nums}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.leg{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px;text-align:center;padding-block:10px}
+.leg+.leg{border-top:1px solid var(--line)}
+.leg .ap{font-family:var(--f-display);font-size:1.7rem;line-height:1}
+.leg .tm{font-size:1rem;font-weight:500;margin-top:2px;font-variant-numeric:tabular-nums}
+.leg .city{font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--taupe)}
+.leg .mid{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--taupe-soft);font-size:.7rem;letter-spacing:.1em}
+.leg .mid svg{width:22px;height:22px;transform:rotate(45deg)}
+.legmeta{grid-column:1/-1;font-size:.82rem;color:var(--taupe);margin-top:6px}
+.kvrow{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line);font-size:.93rem}
+.kvrow:first-of-type{border-top:0}
+.kvrow b{font-weight:500;text-align:right}
+
+/* money */
+.ledger{width:100%;border-collapse:collapse}
+.ledger td{padding:9px 0;border-top:1px solid var(--line);font-size:.93rem;vertical-align:top}
+.ledger tr:first-child td{border-top:0}
+.ledger td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:12px;font-weight:500}
+
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--taupe-soft);padding:12px 18px;align-self:center;letter-spacing:.02em;text-transform:none;font-size:.9rem;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn.ghost[hidden]{display:none}
+.now:empty{display:none}
+.now{display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:22px;padding:18px;margin-bottom:24px;box-shadow:0 1px 0 var(--line)}
+.now h2{font-family:var(--f-display);font-weight:500;font-size:1.45rem;margin:0;line-height:1.1}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:.95rem}
+.steps li:first-child{border-top:0}
+.steps .t{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe);font-weight:600;padding-top:3px}
+.upnext{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;padding:6px 0}
+.upnext .cal{padding:5px 0}
+.helpbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;border-radius:99px;padding:14px 20px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.helpbtn svg{width:22px;height:22px}
+.facts .kvrow b{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.kvrow a{color:var(--ink)}
+.phone.big{font-family:var(--f-display);font-size:2rem;letter-spacing:0}
+.checks li.empty{padding:14px 16px;color:var(--taupe);font-size:.92rem}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(130px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:99px;font-size:.85rem;z-index:20}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cal" viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="19" rx="2.5"/><path d="M5 13.5h22M11 5v5M21 5v5M10 18h2M15 18h2M20 18h2M10 22.5h2M15 22.5h2"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 32 32"><path d="M26.6 5.4c-1.2-1.2-3-1.1-4.2.1L17 11 7 8l-2 2 8 5-4 4-3-.5L4.5 20l4 2 2 4 1.5-1.5-.5-3 4-4 5 8 2-2-3-10 5.4-5.3c1.2-1.2 1.3-3 .1-4.2z"/></symbol>
+    <symbol id="i-house" viewBox="0 0 32 32"><path d="M5.5 14.5 16 6l10.5 8.5V27h-21z"/><path d="M13 27v-7h6v7"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 32 32"><rect x="7" y="6" width="18" height="22" rx="2"/><rect x="12" y="4" width="8" height="4" rx="1"/><path d="m10.5 13.5 1.5 1.5 2.5-3M17 13.5h5M10.5 19.5l1.5 1.5 2.5-3M17 19.5h5M17 24.5h5"/></symbol>
+    <symbol id="i-case" viewBox="0 0 32 32"><rect x="7" y="10" width="18" height="16" rx="2.5"/><path d="M12.5 10V7.2c0-.9.7-1.7 1.6-1.7h3.8c.9 0 1.6.8 1.6 1.7V10M12 10v16M20 10v16"/><circle cx="10.5" cy="28" r="1"/><circle cx="21.5" cy="28" r="1"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M21 11l-3 7-7 3 3-7z"/><circle cx="16" cy="16" r=".8"/></symbol>
+    <symbol id="i-eat" viewBox="0 0 32 32"><path d="M8 5v6c0 1.7 1.3 3 3 3s3-1.3 3-3V5M11 5v22"/><ellipse cx="21.5" cy="9.5" rx="3.2" ry="4.6"/><path d="M21.5 14.1V27"/></symbol>
+    <symbol id="i-map" viewBox="0 0 32 32"><path d="M5 8.5l7-3 8 3 7-3v18l-7 3-8-3-7 3z"/><path d="M12 5.5v18M20 8.5v18"/></symbol>
+    <symbol id="i-boat" viewBox="0 0 32 32"><path d="M5 22h22l-3 5H8z"/><path d="M16 4v18M16.8 6 25 19h-8.2M15 9.5 8.5 19H15"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 32 32"><path d="M6 10.5h19a2 2 0 0 1 2 2V25a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2.5 2.5 0 0 1 2.5-2.5H22v4"/><path d="M27 15.5h-5a2.5 2.5 0 0 0 0 5h5"/><circle cx="22.2" cy="18" r=".8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 32 32"><path d="M16 26.5S6 20.5 6 13a5 5 0 0 1 10-1.8A5 5 0 0 1 26 13c0 7.5-10 13.5-10 13.5z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4.5"/><path d="M8.2 8.2l4.6 4.6M19.2 19.2l4.6 4.6M23.8 8.2l-4.6 4.6M12.8 19.2l-4.6 4.6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 32 32"><circle cx="16" cy="14" r="9"/><ellipse cx="16" cy="14" rx="4" ry="9"/><path d="M7 14h18M8.3 9.5h15.4M8.3 18.5h15.4M7.5 23.5a12 12 0 0 0 17 0M16 25.8V29M12 29h8"/></symbol>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+
+<!-- HOME -->
+<section class="screen" id="s-home">
+  <div class="g topbar"><span class="kicker">Mom &amp; me</span><span class="kicker">Apr 2027</span></div>
+  <div class="g home-head">
+    <h1>St. Martin</h1>
+    <span class="script">Travel Guide</span>
+    <div class="caps" style="margin-top:14px">Grand Case · French side</div>
+    <div class="home-count" id="count"><b id="cd-n">—</b><span id="cd-l">days to go</span></div>
+  </div>
+  <div class="g" id="now"></div>
+  <div class="band">
+    <nav class="g menu" id="menu" aria-label="Guide sections"></nav>
+  </div>
+  <div class="g" style="padding-top:22px"><a class="helpbtn" href="#help"><svg class="ico" aria-hidden="true"><use href="#i-help"/></svg>Emergency &amp; documents</a></div>
+  <p class="g home-foot caps">Tap an icon</p>
+  <p class="g home-foot small muted" style="padding-top:0">Version 2026-11-14a</p>
+</section>
+
+<!-- SCHEDULE -->
+<section class="screen" id="s-schedule" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Apr 1 – 10</span></div>
+  <div class="g ttl"><h1>Daily</h1><span class="script">Schedule</span></div>
+  <div class="g stack">
+    <div class="days" id="days"></div>
+    <div class="card" id="day-card" aria-live="polite"></div>
+    <h2 class="sec">Before we go</h2>
+    <ul class="dates" id="dates"></ul>
+  </div>
+</section>
+
+<!-- FLIGHT -->
+<section class="screen" id="s-flight" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Air Canada</span></div>
+  <div class="g ttl"><h1>Flight</h1><span class="script">Details</span></div>
+  <div class="g stack">
+    <div class="arch wide" data-scene="bay"></div>
+    <div class="info">
+      <div><div class="k">Booking</div><div class="v">In our Air Canada email</div></div>
+      <div><div class="k">Fare</div><div class="v">Economy Basic</div></div>
+      <div><div class="k">Leave</div><div class="v">Thu Apr 1 · 05:45</div></div>
+      <div><div class="k">Home</div><div class="v">Sat Apr 10 · 22:26</div></div>
+    </div>
+
+    <div class="card" id="passes">
+      <span class="caps">Boarding passes</span>
+      <p>They appear when check-in opens, 24 hours before each flight. Check in on the Air Canada app, then tap <b>Add to Wallet</b> for each flight.</p>
+      <p class="small muted">Each of us adds the booking to our own app, so each phone gets its own passes. Once they're in Wallet you don't need the app at the airport, and Wallet works without internet.</p>
+      <div class="links"><a class="pill dark" data-wallet href="https://wallet.google.com/">Open Wallet</a><a class="pill" data-acapp href="https://play.google.com/store/apps/details?id=com.aircanada" target="_blank" rel="noopener">Air Canada app</a></div>
+      <p class="small muted" data-wallet-tip></p>
+    </div>
+
+    <div class="card">
+      <span class="caps">Going · Thursday, April 1</span>
+      <div class="leg"><div><div class="ap">YOW</div><div class="tm">05:45</div><div class="city">Ottawa</div></div><div class="mid"><svg class="ico"><use href="#i-plane"/></svg>49m</div><div><div class="ap">YUL</div><div class="tm">06:34</div><div class="city">Montréal</div></div>
+        <div class="legmeta">AC 7762 · PAL Airlines Dash 8-400 · No seats picked yet</div></div>
+      <div class="leg"><div><div class="ap">YUL</div><div class="tm">08:45</div><div class="city">Montréal</div></div><div class="mid"><svg class="ico"><use href="#i-plane"/></svg>4h 35m</div><div><div class="ap">SXM</div><div class="tm">13:20</div><div class="city">St. Maarten</div></div>
+        <div class="legmeta">AC 2108 · Rouge 737 MAX 8 · Seats 15E &amp; 15F</div></div>
+      <a class="pill dark" href="https://www.restomontreal.ca/resto/livia-dorval/17595/en/" target="_blank" rel="noopener" style="align-self:flex-start">Breakfast at Livia · Gate 52</a>
+    </div>
+
+    <div class="card">
+      <span class="caps">Coming home · Saturday, April 10</span>
+      <div class="leg"><div><div class="ap">SXM</div><div class="tm">14:25</div><div class="city">St. Maarten</div></div><div class="mid"><svg class="ico"><use href="#i-plane"/></svg>4h 55m</div><div><div class="ap">YUL</div><div class="tm">19:20</div><div class="city">Montréal</div></div>
+        <div class="legmeta">AC 2109 · Rouge 737 MAX 8 · Seats 16E &amp; 16F</div></div>
+      <div class="leg"><div><div class="ap">YUL</div><div class="tm">21:35</div><div class="city">Montréal</div></div><div class="mid"><svg class="ico"><use href="#i-plane"/></svg>51m</div><div><div class="ap">YOW</div><div class="tm">22:26</div><div class="city">Ottawa</div></div>
+        <div class="legmeta">AC 7777 · PAL Airlines Dash 8-400 · No seats picked yet</div></div>
+      <p class="small muted">Montréal is your first stop back in Canada, so you clear customs there.</p>
+    </div>
+
+    <div class="card soft">
+      <span class="caps">Bags · Economy Basic</span>
+      <ul>
+        <li><b>One personal item each</b> on board, max 43 × 33 × 16 cm (17 × 13 × 6 in), must fit under the seat. <b>No carry-on bag.</b></li>
+        <li><b>One checked bag each included</b> with the Aeroplan Visa. Up to 23 kg (50 lb).</li>
+        <li>No changes or cancellations on this fare.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="caps">Check-in timing</span>
+      <div class="kvrow"><span>Online/app check-in opens</span><b>24 hrs before</b></div>
+      <div class="kvrow"><span>Bag drop opens</span><b>3 hrs before</b></div>
+      <div class="kvrow"><span>Check-in &amp; bag drop close</span><b>60 min before</b></div>
+      <div class="kvrow"><span>Be at the gate (international)</span><b>45 min before</b></div>
+      <div class="kvrow"><span>Gate closes</span><b>15 min before</b></div>
+    </div>
+
+    <div class="card soft">
+      <span class="caps">From the airport</span>
+      <p>Walk outside and grab a cab. About <b>US$40</b> to Grand Case Beach Club for two people + bags. Don't pre-book: a pre-booked driver charges extra if the flight is late.</p>
+      <div class="links" data-map="Grand Case Beach Club, Grand Case, Saint-Martin" data-from="Princess Juliana International Airport"></div>
+    </div>
+    <div class="card">
+      <span class="caps">Near the airport</span>
+      <p><b>Zee Best Bakeshop</b> sells frappuccinos and sandwiches. Apparently you need to drive there.</p>
+      <div class="links" data-map="Zee Best Bakeshop, Sint Maarten"></div>
+    </div>
+    <div class="card" id="arrival">
+      <span class="caps">Arrival card · from Thu Mar 25</span>
+      <p>Fill in the <b>Sint Maarten Entry Form</b>, the official arrival card, for both of us. It opens 7 days before we land, so <b>Thu Mar 25</b> at the earliest. One person can fill it in for both.</p>
+      <a class="pill dark" href="https://www.entry.sx/" target="_blank" rel="noopener" style="align-self:flex-start;padding:10px 16px">Official form · entry.sx</a>
+      <p class="small" style="color:var(--rust)">Only use <b>entry.sx</b>. It's free. Any site that asks for money is a scam, even if it shows up first on Google.</p>
+      <span class="caps" style="margin-top:8px">What it asks for · tap to copy</span>
+      <div class="facts">
+        <div class="kvrow"><span>Arriving</span><b>AC 2108 · Thu Apr 1, 2027 <button class="pill" type="button" data-copy="AC 2108">Copy</button></b></div>
+        <div class="kvrow"><span>Flying in from</span><b>Montréal (YUL)</b></div>
+        <div class="kvrow"><span>Leaving</span><b>AC 2109 · Sat Apr 10, 2027 <button class="pill" type="button" data-copy="AC 2109">Copy</button></b></div>
+        <div class="kvrow"><span>Staying at</span><b>Grand Case Beach Club <button class="pill" type="button" data-copy="Grand Case Beach Club">Copy</button></b></div>
+        <div class="kvrow"><span>Address</span><b>21 Rue de Petite Plage, 97150 Grand Case, Saint-Martin <button class="pill" type="button" data-copy="21 Rue de Petite Plage, 97150 Grand Case, Saint-Martin">Copy</button></b></div>
+        <div class="kvrow"><span>Hotel phone</span><b>+590 590 87 51 87 <button class="pill" type="button" data-copy="+590 590 87 51 87">Copy</button></b></div>
+      </div>
+      <p class="small muted">Also have each passport and an email address ready. Checked Nov 14, 2026: the Government of Sint Maarten, the St. Maarten Tourism Bureau and the form site itself all name entry.sx as the official form.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAY -->
+<section class="screen" id="s-stay" hidden>
+  <div class="split">
+    <div class="vert"><h1>Accommodation <em>Grand Case</em></h1></div>
+    <div>
+      <div class="g topbar" style="justify-content:flex-end"><a class="burger" href="#home" aria-label="Back to menu" style="margin:0 -8px 0 0"><span></span><span></span><span></span></a></div>
+      <div class="g stack" style="padding-top:0">
+        <div class="arch" data-scene="beach"></div>
+        <div class="info">
+          <div><div class="k">Check in</div><div class="v">Thu Apr 1 · from 4 PM</div></div>
+          <div><div class="k">Check out</div><div class="v">Sat Apr 10 · 11 AM</div></div>
+          <div><div class="k">Room</div><div class="v">Studio, Oceanfront</div></div>
+          <div><div class="k">Reservation</div><div class="v">Through Expedia</div></div>
+          <div><div class="k">Free cancel</div><div class="v">Thu Mar 25, 11:59 PM</div></div>
+          <div><div class="k">Balance</div><div class="v">US$2,470.36 · Apr 1</div></div>
+        </div>
+        <div class="card">
+          <span class="caps">Contact</span>
+          <div class="contact"><span class="phone">+590 590 87 51 87</span><button class="pill" type="button" data-copy="+590 590 87 51 87">Copy</button></div>
+          <p class="small muted">Front desk 7:30 AM to midnight. 21 Rue de Petite Plage, Grand Case. Avoid their 800 number: the hotel says it charges $1/min.</p>
+          <div class="links">
+            <a class="pill dark" href="https://grandcasebeachclub.com/" target="_blank" rel="noopener">Website</a>
+            <a class="pill" href="https://grandcasebeachclub.com/dining/" target="_blank" rel="noopener">Dining</a>
+          </div>
+          <div class="links" data-map="Grand Case Beach Club, Grand Case, Saint-Martin"></div>
+        </div>
+        <div class="card soft">
+          <span class="caps">Arrival-day gap</span>
+          <p>We land at 13:20, but check-in starts at 4 PM. Ask GCBC about early check-in or holding our bags.</p>
+        </div>
+        <div class="card soft">
+          <span class="caps">Room request</span>
+          <p>Second floor, 200 building, two beds. Noted on Expedia, <b>not guaranteed</b>.</p>
+          <a class="pill dark" href="#todo" style="align-self:flex-start;margin-top:4px">Questions to ask GCBC</a>
+        </div>
+        <div class="card">
+          <span class="caps">In the room</span>
+          <ul>
+            <li>Tap water is fine: GCBC has its own reverse-osmosis plant.</li>
+            <li>Only four Nespresso pods provided, then you pay. Bring ours.</li>
+            <li>Kettle: unknown, ask the hotel.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TODO -->
+<section class="screen" id="s-todo" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker" id="cnt-todo"></span></div>
+  <div class="g ttl"><h1>To do</h1><span class="script">before we go</span></div>
+  <div class="g stack">
+    <div class="prog"><div class="bar"><span id="bar-todo"></span></div></div>
+    <ul class="checks" id="list-todo"></ul>
+    <form class="add" data-list="todo"><input id="add-todo" placeholder="Add a to-do" aria-label="Add a to-do" maxlength="200"><button class="btn" type="submit">Add</button></form>
+    <button class="btn ghost" type="button" data-undo="todo" hidden></button>
+    <p class="sync" data-sync>Saved on this phone only. Your list and Mom's are separate.</p>
+  </div>
+</section>
+
+<!-- PACKING -->
+<section class="screen" id="s-packing" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker" id="cnt-packing"></span></div>
+  <div class="g ttl"><h1>Packing</h1><span class="script">List</span></div>
+  <div class="g stack">
+    <div class="prog"><div class="bar"><span id="bar-packing"></span></div></div>
+    <ul class="checks" id="list-packing"></ul>
+    <form class="add" data-list="packing"><input id="add-packing" placeholder="Add something to pack" aria-label="Add something to pack" maxlength="200"><button class="btn" type="submit">Add</button></form>
+    <button class="btn ghost" type="button" data-undo="packing" hidden></button>
+    <p class="sync" data-sync>Saved on this phone only. Your list and Mom's are separate.</p>
+  </div>
+</section>
+
+<!-- DRIVERS -->
+<section class="screen" id="s-drivers" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Message early Feb</span></div>
+  <div class="g ttl"><h1>Getting</h1><span class="script">Around</span><p>Drivers are for outings only. For the airport, just grab a cab outside (~US$40).</p></div>
+  <div class="g stack">
+    <div id="drivers" style="display:flex;flex-direction:column;gap:12px"></div>
+    <div class="card soft">
+      <span class="caps">Pre-book this one · Sun Apr 4</span>
+      <p>Grand Case → Nowhere Special Restaurant, Simpson Bay. Leave <b>~1:30 PM</b>, pickup <b>~7:20 PM</b>. Include it in the February driver messages.</p>
+    </div>
+    <div class="card">
+      <span class="caps">Ruled out</span>
+      <p class="small muted">Local buses: some have no AC, often very crowded, slower than a taxi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EAT -->
+<section class="screen" id="s-eat" hidden>
+  <div class="band">
+    <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Prices as noted</span></div>
+    <div class="g ttl"><h1>Where To Eat</h1></div>
+  </div>
+  <div class="g stack" style="padding-top:20px">
+    <div class="filters" id="filters" role="group" aria-label="Filter by meal"></div>
+    <ul class="food" id="food"></ul>
+    <div class="card soft">
+      <span class="caps">The lolos</span>
+      <p>Lots of flies around the open-air grills. Order takeaway (they do boxes) and eat on the beach or back at the hotel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="screen" id="s-places" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Hikes ≤ 1.5 hrs</span></div>
+  <div class="g ttl"><h1>Places</h1><span class="script">to visit</span><p>Beaches and easy walks from our notes. Nothing here is booked.</p></div>
+  <div class="g stack">
+    <div class="places" id="places"></div>
+    <div class="card">
+      <span class="caps">Ruled out</span>
+      <ul class="ruled">
+        <li><b>Pic Paradis</b> and <b>St Peter's Hill</b>: too long and steep.</li>
+        <li><b>Pinel Island</b>: crowded; Grand Case and Orient are said to be nicer.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BOAT -->
+<section class="screen" id="s-boat" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="pill sea">Booked</span></div>
+  <div class="g ttl"><h1>Boat</h1><span class="script">Day</span><p>No1SXM Afternoon Snorkel &amp; Sunset Sail</p></div>
+  <div class="g stack">
+    <div class="arch wide" data-scene="sunset"></div>
+    <div class="info">
+      <div><div class="k">Date</div><div class="v">Sun April 4</div></div>
+      <div><div class="k">Check in</div><div class="v">2:45 PM</div></div>
+      <div><div class="k">Confirmation</div><div class="v">In our email</div></div>
+      <div><div class="k">Still owing</div><div class="v">US$187.50</div></div>
+    </div>
+    <div class="card">
+      <span class="caps">Meeting point</span>
+      <p><b>Nowhere Special Restaurant</b>, Welfare Rd., Simpson Bay. Next to St. Maarten Yacht Club, before the drawbridge, across from Hilton Royal Palm.</p>
+      <p class="small" style="color:var(--rust)">Confirmation lists the street number as 84 in one place and 88 in another. Go by the restaurant name.</p>
+      <p class="small muted">Parking is along the street; the restaurant lot is for its own guests.</p>
+      <div class="links" data-map="Nowhere Special Restaurant, Simpson Bay, Sint Maarten"></div>
+    </div>
+    <div class="card">
+      <span class="caps">Contact No1SXM</span>
+      <div class="contact"><span class="phone">+1 721-580-3301</span><button class="pill" type="button" data-copy="+1 721-580-3301">Copy</button><a class="pill dark" href="https://wa.me/17215803301" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div class="contact"><span class="phone">info@no1sxm.com</span><button class="pill" type="button" data-copy="info@no1sxm.com">Copy</button><a class="pill" href="https://no1sxm.com/" target="_blank" rel="noopener">Website</a></div>
+    </div>
+    <div class="card">
+      <span class="caps">Bring</span>
+      <ul>
+        <li>Towel, swimwear, sunscreen</li>
+        <li>A comfortable cover-up for sunset</li>
+        <li>It's a barefoot boat. Water shoes are OK if you put them on once on board.</li>
+      </ul>
+      <p class="small muted">Already noted on the booking: one of us is pescetarian.</p>
+    </div>
+    <div class="card">
+      <span class="caps">The afternoon</span>
+      <ul class="plan">
+        <li><span class="t">~1:30 PM</span><span>Taxi leaves Grand Case (~30 min drive)</span></li>
+        <li><span class="t">2:45 PM</span><span>Check in. Arrive early for the first dinghy and pick seats.</span></li>
+        <li><span class="t">3:00 PM</span><span>Dinghy out to the trimaran; ~1 hr sail with a sweet snack</span></li>
+        <li><span class="t">Then</span><span>Snorkel and swim in Little Bay (gear provided), tropical fruit platter</span></li>
+        <li><span class="t">Then</span><span>Sunset sail back with savoury tapas</span></li>
+        <li><span class="t">7:00 PM</span><span>Sail ends · taxi pickup ~7:20 PM</span></li>
+      </ul>
+    </div>
+    <div class="card soft">
+      <span class="caps">Good to know</span>
+      <ul>
+        <li>US$125/person, US$250 for two. US$62.50 paid. When and where the balance is paid isn't stated.</li>
+        <li>Cancellation: 48+ hrs before, 100% refund; 24+ hrs, 50%; under 24 hrs, no refund. If they cancel (e.g. weather), 100% refund.</li>
+        <li>Washroom on board.</li>
+        <li>Tell them ahead: no alcohol or soda; iced tea, lemonade, tropical juice. Ask for a virgin rum punch (no rum, no bitters).</li>
+        <li>Boarding is by dinghy, listed as moderate fitness and not wheelchair accessible. Factor in foot pain.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MONEY -->
+<section class="screen" id="s-money" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Links &amp; money</span></div>
+  <div class="g ttl"><h1>Bookings</h1><span class="script">&amp; money</span></div>
+  <div class="g stack">
+    <div class="card">
+      <span class="caps">Air Canada</span>
+      <div class="links">
+        <a class="pill dark" data-acapp href="https://play.google.com/store/apps/details?id=com.aircanada" target="_blank" rel="noopener">Air Canada app</a>
+      </div>
+      <div class="contact"><span class="phone">1-888-247-2262</span><button class="pill" type="button" data-copy="1-888-247-2262">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="caps">Grand Case Beach Club · Expedia</span>
+      <div class="contact"><span class="phone">+590 590 87 51 87</span><button class="pill" type="button" data-copy="+590 590 87 51 87">Copy</button><a class="pill" href="https://grandcasebeachclub.com/" target="_blank" rel="noopener">Website</a></div>
+    </div>
+    <div class="card">
+      <span class="caps">No1SXM sail</span>
+      <div class="contact"><span class="phone">+1 721-580-3301</span><button class="pill" type="button" data-copy="+1 721-580-3301">Copy</button><a class="pill" href="https://no1sxm.com/" target="_blank" rel="noopener">Website</a></div>
+    </div>
+    <div class="card">
+      <span class="caps">Grand Case Beach Club</span>
+      <table class="ledger">
+        <tr><td>9 nights, Studio Oceanfront</td><td>US$4,940.73</td></tr>
+        <tr><td>Paid Aug 12, 2026</td><td>US$2,470.37</td></tr>
+        <tr><td>Due Thu Apr 1, at the hotel</td><td>US$2,470.36</td></tr>
+        <tr><td>Free cancellation until</td><td>Mar 25, 11:59 PM</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="caps">Air Canada extras</span>
+      <table class="ledger">
+        <tr><td>Seats YUL↔SXM, both of us (paid)</td><td>CAD $280</td></tr>
+        <tr><td>1st checked bag each (Aeroplan Visa)</td><td>Included</td></tr>
+        <tr><td>2nd checked bag, per person, each way</td><td>CAD $60</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="caps">No1SXM sail · Junglebee</span>
+      <table class="ledger">
+        <tr><td>Total for two</td><td>US$250.00</td></tr>
+        <tr><td>Paid</td><td>US$62.50</td></tr>
+        <tr><td>Balance · when/where not stated</td><td>US$187.50</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="caps">Rides</span>
+      <table class="ledger">
+        <tr><td>Airport cab to GCBC</td><td>~US$40</td></tr>
+        <tr><td>Larry, 3 / 4 / 5 hrs (anecdotal)</td><td>$150 / $180 / $225</td></tr>
+      </table>
+    </div>
+    <div class="card soft">
+      <span class="caps">Missing from our notes</span>
+      <ul>
+        <li>When and where the boat balance is paid</li>
+        <li>Phone numbers for Guillermo (Gizmo Tours) and Micka</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MOM -->
+<section class="screen" id="s-mom" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Stomach checklist</span></div>
+  <div class="g ttl"><h1>For</h1><span class="script" style="margin-left:22%">Mom</span></div>
+  <div class="g stack">
+    <div class="card"><span class="caps">Water</span><ul>
+      <li>Bottled water off-resort on the French side (Grand Case, Marigot)</li>
+      <li>Resort tap water is fine (reverse-osmosis plant)</li>
+      <li>Before leaving, check for French-side tap water advisories</li></ul></div>
+    <div class="card"><span class="caps">Food</span><ul>
+      <li>Skip food that has been sitting out (buffets, warm salads)</li>
+      <li>Careful with ice at roadside spots and small vendors</li>
+      <li>Go easy on raw salads and unpeeled fruit off-resort</li></ul></div>
+    <div class="card"><span class="caps">Routine</span><ul>
+      <li>Keep meal times regular</li>
+      <li>Some fibre daily, not just treats</li>
+      <li>Stay hydrated in the heat</li>
+      <li>Protect her sleep schedule</li></ul></div>
+    <div class="card soft"><span class="caps">Phone</span><p>eSIM for Mom: Ubigi sounds like the best one.</p></div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="screen" id="s-tips" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">From our notes</span></div>
+  <div class="g ttl"><h1>Good</h1><span class="script">to know</span></div>
+  <div class="g stack">
+    <div class="card"><span class="caps">Time zone</span><p>Same time as Ottawa in April. No clock changes.</p></div>
+    <div class="card"><span class="caps">Sundays, French side</span><p>Most shops and boutiques close. Supermarkets open Sunday mornings only (~8 AM–12:45 PM). No shopping plans for Sun Apr 4.</p></div>
+    <div class="card"><span class="caps">Sunset snack</span><p>Crackers from home (Mary's or rice crackers) + chèvre from Super U.</p></div>
+    <div class="card"><span class="caps">Grocery shuttle</span><p>Someone said GCBC runs one. If so, we may skip a grocery stop on the way from the airport. Fee and schedule still to confirm.</p></div>
+    <div class="card soft">
+      <span class="caps">Post-breakfast fatigue · test over a few brunches</span>
+      <ul>
+        <li>15–20 g protein 15–30 min <b>before</b> a carb-heavy breakfast (bar with 15 g+ protein and low sugar, a shake, or two hard-boiled eggs)</li>
+        <li>Or eat protein and vegetables first, carbs last</li>
+        <li>A 10–15 min walk afterward</li>
+        <li>Or add eggs, or split the sweet dish and order something savoury</li>
+      </ul>
+      <p class="small muted">These reliably cut the glucose spike. Whether the spike causes the fatigue is unconfirmed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HELP -->
+<section class="screen" id="s-help" hidden>
+  <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Keep this handy</span></div>
+  <div class="g ttl"><h1>Help</h1><span class="script">&amp; documents</span></div>
+  <div class="g stack">
+    <div class="card">
+      <span class="caps">Emergency · French side, where we stay</span>
+      <div class="contact"><span class="phone big">112</span><a class="pill dark" href="tel:112">Call 112</a></div>
+      <p class="small muted">Police, ambulance and fire. Works from any cell phone.</p>
+    </div>
+    <div class="card">
+      <span class="caps">Emergency · Dutch side (airport, Simpson Bay, boat day)</span>
+      <div class="kvrow"><span>Ambulance</span><b><a href="tel:912">912</a></b></div>
+      <div class="kvrow"><span>Fire</span><b><a href="tel:919">919</a></b></div>
+      <div class="kvrow"><span>Police</span><b><a href="tel:+17215422222">+1 721-542-2222</a></b></div>
+    </div>
+    <div class="card">
+      <span class="caps">Nearest hospital</span>
+      <h3>Louis-Constant Fleming Hospital</h3>
+      <p class="small muted">Concordia, Marigot, on the French side. Emergency room open 24 hours.</p>
+      <div class="links" data-map="Centre Hospitalier Louis-Constant Fleming, Saint-Martin" data-from="Grand Case Beach Club, Grand Case, Saint-Martin"></div>
+    </div>
+    <div class="card">
+      <span class="caps">Government of Canada · 24/7</span>
+      <p class="small">For a lost or stolen passport, a serious accident, an arrest, or any emergency where you need Canada's help.</p>
+      <div class="kvrow"><span>Phone (call collect where available)</span><b><a href="tel:+16139968885">+1-613-996-8885</a></b></div>
+      <div class="kvrow"><span>WhatsApp</span><b><a href="https://wa.me/16139098881" target="_blank" rel="noopener">+1-613-909-8881</a></b></div>
+      <div class="kvrow"><span>Email</span><b><a href="mailto:sos@international.gc.ca">sos@international.gc.ca</a></b></div>
+    </div>
+    <div class="card">
+      <span class="caps">Travel insurance</span>
+      <p class="small muted">Type the claims phone number from your insurance card. It saves on this phone only.</p>
+      <form class="add" id="ins-form"><input id="ins" type="tel" inputmode="tel" placeholder="Claims phone number" aria-label="Travel insurance claims phone number" maxlength="40"><button class="btn" type="submit">Save</button></form>
+      <div class="contact" id="ins-show" hidden><span class="phone" id="ins-num" data-nocall></span><a class="pill dark" id="ins-call" href="#">Call</a><button class="pill" type="button" id="ins-edit">Change</button></div>
+    </div>
+    <div class="card soft" id="docs">
+      <span class="caps">Our documents</span>
+      <p>A private Google Drive folder. Only the two of us can open it.</p>
+      <ul>
+        <li>A photo of each passport's photo page</li>
+        <li>Travel insurance card and policy</li>
+        <li>Air Canada itinerary, hotel and boat confirmations</li>
+      </ul>
+      <a class="pill dark" href="https://drive.google.com/drive/folders/1dgxgGA-h3seOF3EnDrH20UBoZsRojio3" target="_blank" rel="noopener" style="align-self:flex-start">Open documents folder</a>
+      <p class="small muted">Before the trip, open the folder in the Google Drive app and turn on "Available offline" for each file.</p>
+    </div>
+    <p class="small muted">Numbers checked Nov 14, 2026 on travel.gc.ca (Government of Canada).</p>
+  </div>
+</section>
+
+<nav class="dock" id="dock" aria-label="Quick menu"></nav>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const DAY=864e5;
+function today(){let d=new Date();try{const q=new URLSearchParams(location.search).get("today");if(q&&/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(q)){const p=q.split("-");d=new Date(+p[0],p[1]-1,+p[2]);}}catch(e){}return new Date(d.getFullYear(),d.getMonth(),d.getDate());}
+function daysTo(d){return Math.round((d-today())/DAY);}
+function el(tag,attrs,...kids){const e=document.createElement(tag);for(const k in (attrs||{})){if(k==="class")e.className=attrs[k];else if(k==="text")e.textContent=attrs[k];else if(k==="html")e.innerHTML=attrs[k];else e.setAttribute(k,attrs[k]);}kids.flat().forEach(c=>{if(c==null)return;e.append(c.nodeType?c:document.createTextNode(c));});return e;}
+function ico(id){return '<svg class="ico" aria-hidden="true"><use href="#i-'+id+'"/></svg>';}
+
+/* sections & menus */
+const SECTIONS=[
+ ["schedule","cal","Daily schedule"],["flight","plane","Flight"],["stay","house","Accommodation"],
+ ["todo","clip","To-do list"],["packing","case","Packing list"],["drivers","compass","Getting around"],
+ ["eat","eat","Where to eat"],["places","map","Places to visit"],["boat","boat","Boat day"],
+ ["money","wallet","Bookings"],["mom","heart","For Mom"],["tips","globe","Good to know"]
+];
+const menu=$("#menu"),dock=$("#dock");
+SECTIONS.forEach(([id,ic,l])=>{
+  menu.append(el("a",{href:"#"+id,html:ico(ic)+'<span class="lbl">'+l+'</span>'}));
+  dock.append(el("a",{href:"#"+id,"aria-label":l,title:l,html:ico(ic)}));
+});
+
+/* countdown */
+(function(){const n=daysTo(new Date(2027,3,1));
+  if(n>1){$("#cd-n").textContent=n;$("#cd-l").textContent="days to go";}
+  else if(n===1){$("#cd-n").textContent="1";$("#cd-l").textContent="day to go";}
+  else if(n===0){$("#cd-n").textContent="";$("#cd-l").textContent="Travel day!";}
+  else if(n>=-9){$("#cd-n").textContent="Day "+(1-n);$("#cd-l").textContent="in paradise";}else{$("#cd-n").textContent="";$("#cd-l").textContent="Welcome home";}
+})();
+
+/* illustrated scenes (no external images allowed) */
+let sid=0;
+function scene(kind){
+  const i=++sid;
+  const P={
+    beach:{sky:["#9CCBD4","#E3EFEC"],sea:["#4AA7A3","#86CBC4"],sand:"#EAD9BC",sun:"#FBF3DF",palm:true,hills:false},
+    bay:{sky:["#8EC3D0","#DDEDEB"],sea:["#2F8E95","#7FC9C6"],sand:"#E9DCC2",sun:"#FFF8E8",palm:false,hills:true},
+    sunset:{sky:["#E9A985","#F6E1C9"],sea:["#3C7C86","#7FA9A9"],sand:null,sun:"#F7C990",palm:false,hills:false,sail:true},
+    hills:{sky:["#A9CFD6","#E7F0EC"],sea:["#3E9B98","#8CCFC8"],sand:"#E6D6B8",sun:"#FFF8E8",palm:false,hills:true,green:true},
+    town:{sky:["#A3CBD3","#E8F0EC"],sea:["#3E929A","#8AC8C6"],sand:null,sun:"#FFF8E8",palm:false,hills:true,town:true}
+  }[kind]||{};
+  let s='<svg viewBox="0 0 300 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>'+
+   '<linearGradient id="sk'+i+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+P.sky[0]+'"/><stop offset="1" stop-color="'+P.sky[1]+'"/></linearGradient>'+
+   '<linearGradient id="se'+i+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+P.sea[0]+'"/><stop offset="1" stop-color="'+P.sea[1]+'"/></linearGradient>'+
+   '<filter id="gr'+i+'"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .22  0 0 0 .09 0"/></filter></defs>'+
+   '<rect width="300" height="330" fill="url(#sk'+i+')"/>';
+  s+='<circle cx="'+(kind==="sunset"?150:220)+'" cy="'+(kind==="sunset"?160:70)+'" r="'+(kind==="sunset"?34:22)+'" fill="'+P.sun+'" opacity=".95"/>';
+  s+='<path d="M20 70q20-10 40 0M40 90q25-12 50 0" stroke="#fff" stroke-opacity=".5" stroke-width="5" fill="none" stroke-linecap="round"/>';
+  if(P.hills){s+='<path d="M0 175 C40 120 80 130 110 150 S170 110 210 140 S270 150 300 135 V190 H0z" fill="'+(P.green?"#6F9373":"#7E9C80")+'"/><path d="M0 185 C60 160 120 175 170 165 S260 170 300 160 V195 H0z" fill="#5F8565"/>';}
+  if(P.town){for(let k=0;k<9;k++){const x=30+k*28,h=10+((k*7)%12);s+='<rect x="'+x+'" y="'+(186-h)+'" width="18" height="'+h+'" fill="'+["#F4EDE0","#EBC9B5","#F2E3C2","#DCE7E3"][k%4]+'"/>';}}
+  s+='<rect y="'+(kind==="sunset"?175:188)+'" width="300" height="160" fill="url(#se'+i+')"/>';
+  s+='<path d="M30 215h60M150 232h90M60 255h70M190 275h70" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>';
+  if(kind==="sunset"){s+='<path d="M150 190h16" stroke="#F7C990" stroke-opacity=".7" stroke-width="3"/><path d="M118 230h30" stroke="#F7C990" stroke-opacity=".5" stroke-width="3"/>';}
+  if(P.sail){s+='<path d="M200 205h44l-6 9h-32z" fill="#2E3B3D"/><path d="M222 150v55M223 152l18 47h-18zM221 160l-14 39h14z" fill="#F8F2E6" stroke="#2E3B3D" stroke-width="1.2"/>';}
+  if(P.sand){s+='<path d="M0 290 C80 268 170 270 300 255 V330 H0z" fill="'+P.sand+'"/><path d="M0 290 C80 268 170 270 300 255" stroke="#fff" stroke-opacity=".7" stroke-width="4" fill="none"/>';}
+  if(P.palm){s+='<g stroke="#3D4E43" stroke-linecap="round" fill="none"><path d="M262 330C258 280 250 240 232 205" stroke-width="7"/>'+
+    '<path d="M232 205q-42-6-72 22M232 205q-34-30-68-22M232 205q-4-40-28-60M232 205q24-36 58-32M232 205q38-4 60 34M232 205q14 22 10 52" stroke-width="5"/></g>';}
+  s+='<rect width="300" height="330" filter="url(#gr'+i+')"/></svg>';
+  return s;
+}
+document.querySelectorAll("[data-scene]").forEach(n=>{n.insertAdjacentHTML("afterbegin",scene(n.dataset.scene));});
+
+/* schedule */
+const DAYS=[
+ {k:"d1",lbl:"Day 1",date:"Apr 1",title:"Thursday, April 1 · Travel day",items:[
+   ["By 04:45","Check in and drop bags at Ottawa (closes 60 min before)"],["05:45","AC 7762 Ottawa → Montréal"],
+   ["08:45","AC 2108 Montréal → St. Maarten · seats 15F / 15E"],["13:20","Land at SXM. Walk outside and grab a cab (~US$40)"],
+   ["4 PM","Hotel check-in opens. Ask about early check-in or a bag hold."],["Today","Pay GCBC balance: US$2,470.36"],
+   ["Maybe","Grocery stop on the way, unless GCBC's shuttle covers it (still to confirm)"]],link:["#flight","Flight details"]},
+ {k:"d2",lbl:"Day 2",date:"Apr 2",title:"Friday, April 2 · Open day",open:true},
+ {k:"d3",lbl:"Day 3",date:"Apr 3",title:"Saturday, April 3 · Open day",open:true,extra:"French-side shops close tomorrow (Sunday). Supermarkets open Sunday morning only."},
+ {k:"d4",lbl:"Day 4",date:"Apr 4",title:"Sunday, April 4 · Boat day",items:[
+   ["Morning","Supermarkets open ~8 AM–12:45 PM only; most shops closed"],["~1:30 PM","Taxi from Grand Case to Simpson Bay"],
+   ["2:45 PM","Check in at Nowhere Special Restaurant"],["3–7 PM","Snorkel & Sunset Sail"],["~7:20 PM","Taxi back"]],link:["#boat","Boat day details"]},
+ {k:"d5",lbl:"Day 5",date:"Apr 5",title:"Monday, April 5 · Open day",open:true},
+ {k:"d6",lbl:"Day 6",date:"Apr 6",title:"Tuesday, April 6 · Open day",open:true},
+ {k:"d7",lbl:"Day 7",date:"Apr 7",title:"Wednesday, April 7 · Open day",open:true,extra:"La Villa is listed as closed on Wednesdays."},
+ {k:"d8",lbl:"Day 8",date:"Apr 8",title:"Thursday, April 8 · Open day",open:true},
+ {k:"d9",lbl:"Day 9",date:"Apr 9",title:"Friday, April 9 · Last full day",open:true,extra:"Online check-in for the flight home opens at 14:25 today, in the Air Canada app."},
+ {k:"d10",lbl:"Day 10",date:"Apr 10",title:"Saturday, April 10 · Flying home",items:[
+   ["11:00","Hotel check-out"],["Then","Cab to the airport (the airport-to-hotel fare in our notes was ~US$40)"],
+   ["11:25","Bag drop opens (3 hrs before)"],["13:25","Check-in and bag drop close"],["13:40","Be at the gate"],
+   ["14:25","AC 2109 St. Maarten → Montréal · seats 16F / 16E"],["19:20","Land in Montréal, clear customs"],
+   ["21:35","AC 7777 Montréal → Ottawa"],["22:26","Home in Ottawa"]],link:["#flight","Flight details"]}
+];
+let selDay="d1";try{const s=sessionStorage.getItem("stm-day");if(s)selDay=s;}catch(e){}
+const TRIPN=daysTo(new Date(2027,3,1));
+if(TRIPN<=0&&TRIPN>=-9)selDay="d"+(1-TRIPN); /* during the trip, open on today */
+const WEATHER="https://www.google.com/search?q=weather+Grand+Case+Saint-Martin";
+const CHECKOUT=["Passports, wallets and phones","Chargers out of the walls","Room safe emptied","Fridge, bathroom and drawers checked","Look under the beds","Settle any room charges at the front desk","Ask the front desk to call a cab"];
+function renderDays(){
+  const box=$("#days");box.textContent="";
+  DAYS.forEach(d=>{
+    const b=el("button",{type:"button",class:"day"+(d.unknown?" unknown":""),"aria-pressed":String(d.k===selDay)},el("b",{text:d.lbl}),el("span",{text:d.date}));
+    b.addEventListener("click",()=>{selDay=d.k;try{sessionStorage.setItem("stm-day",d.k);}catch(e){}renderDays();});
+    box.append(b);
+  });
+  const d=DAYS.find(x=>x.k===selDay)||DAYS[0];const c=$("#day-card");c.textContent="";
+  c.append(el("h3",{text:d.title}));
+  if(d.items){c.append(el("ul",{class:"plan"},d.items.map(([t,x])=>el("li",null,el("span",{class:"t",text:t}),el("span",{text:x})))));}
+  if(d.open){
+    c.append(el("p",{class:"muted small",text:"Nothing booked yet. Ideas from our notes:"}));
+    c.append(el("ul",null,["Sentier des Froussards hike (go early, no shade)","Orient Bay for a morning or afternoon","Friar's Bay and Happy Bay on the way to Marigot","Grand Case beach, right at the hotel"].map(t=>el("li",{text:t}))));
+    if(d.extra)c.append(el("p",{class:"small",style:"color:var(--rust)",text:d.extra}));
+    c.append(el("a",{class:"pill",href:"#places",style:"align-self:flex-start",text:"See places"}));
+  }
+  if(d.unknown){c.append(el("p",{text:"The return date and flight aren't in the notes yet. Add them to the trip doc so the rest of the days can be filled in."}));}
+  if(d.k==="d10"){c.append(el("span",{class:"caps",style:"margin-top:8px",text:"Check-out list"}));c.append(el("ul",null,CHECKOUT.map(t=>el("li",{text:t}))));}
+  const lk=el("div",{class:"links"});
+  if(d.link)lk.append(el("a",{class:"pill dark",href:d.link[0],text:d.link[1]}));
+  lk.append(el("a",{class:"pill",href:WEATHER,target:"_blank",rel:"noopener",text:"Weather"}));
+  c.append(lk);
+}
+renderDays();
+
+const DATES=[
+ {d:new Date(2027,1,1),m:"FEB",n:"Early",t:"Message 1–2 drivers",s:"Outings + the Apr 4 boat-day rides."},
+ {d:new Date(2027,2,25),m:"MAR",n:"25",t:"Last day to cancel GCBC free",s:"Booked through Expedia",tag:"Deadline"},
+ {d:new Date(2027,2,25),m:"MAR",n:"25",t:"Arrival card opens for both of us",s:"Only on entry.sx · free · Flight page has the button"},
+ {d:new Date(2027,2,31),m:"MAR",n:"31",t:"Online check-in opens, 05:45",s:"Air Canada app · 24 hrs before the Ottawa flight"},
+ {d:new Date(2027,3,1),m:"APR",n:"1",t:"Fly out 05:45 · GCBC balance due",s:"Land SXM 13:20 · US$2,470.36",tag:"Payment"},
+ {d:new Date(2027,3,9),m:"APR",n:"9",t:"Check-in for home opens, 14:25",s:"Air Canada app · St. Martin time"},
+ {d:new Date(2027,3,10),m:"APR",n:"10",t:"Fly home 14:25",s:"Check out 11 AM · home in Ottawa 22:26"}
+];
+(function(){const ul=$("#dates");
+  DATES.forEach(x=>{const n=daysTo(x.d);
+    const row=el("div",{class:"row"},el("b",{text:x.t,style:"font-weight:500"}));
+    if(x.tag)row.append(el("span",{class:"pill rust",text:x.tag}));
+    if(n>=0&&n<=14)row.append(el("span",{class:"pill sea",text:n===0?"Today":"In "+n+"d"}));
+    ul.append(el("li",{class:n<0?"past":""},el("div",{class:"cal"},el("b",{text:x.m}),el("span",{text:x.n})),el("div",null,row,el("div",{class:"small muted",text:x.s}))));
+  });
+})();
+
+/* checklists */
+const LISTS={
+ todo:[
+  {id:"hotel",t:"Re-confirm room request with GCBC",s:"2nd floor, 200 building, two beds (not guaranteed). Also ask:",sub:["Early check-in or bag hold? We land 13:20; check-in starts 4 PM","Grocery-store shuttle: fee and schedule","On-site laundry: cost, and are supplies included?","Is there a kettle in the room? If not, can they supply one?"]},
+  {id:"acapp",t:"Install the Air Canada app and add our booking",s:"Each of us on our own phone. Use the booking code in the Air Canada email, or sign in with Aeroplan. Check-in and boarding passes live here."},
+  {id:"yowseats",t:"Optional: pick seats for the Ottawa–Montréal legs",s:"None chosen yet on AC 7762 and AC 7777."},
+  {id:"drivers",t:"Message 1–2 drivers for outings",s:"Guillermo/Gizmo or Larry; John as backup. Not for the airport.",when:"Early Feb"},
+  {id:"boattaxi",t:"Pre-arrange the boat-day taxi",s:"Sun Apr 4: leave Grand Case ~1:30 PM, pickup ~7:20 PM.",when:"Early Feb"},
+  {id:"drinks",t:"Tell No1SXM our drink preferences",s:"No alcohol or soda; iced tea, lemonade, tropical juice. Ask for a virgin rum punch.",when:"Before Apr 4"},
+  {id:"boatbal",t:"Find out when/where the US$187.50 boat balance is paid",s:"The confirmation doesn't say."},
+  {id:"restaurants",t:"Plan restaurants",s:"Well-priced places walkable from GCBC, or delivery when it's better value."},
+  {id:"loterie",t:"Confirm Loterie Farm (The Source) is running",s:"Only if we want the gentle hike."},
+  {id:"esim",t:"Set up an eSIM for Mom",s:"Ubigi sounds like the best one."},
+  {id:"water",t:"Check French-side tap water advisories",s:"Right before leaving."},
+  {id:"cancel",t:"Decide by the free-cancellation deadline",s:"Booked through Expedia.",when:"Mar 25",hot:true},
+  {id:"arrival",t:"Fill in the arrival card for both of us",s:"Opens Mar 25. Only use entry.sx (free). The Flight page has the button and the details to copy.",when:"Mar 25"},
+  {id:"checkin1",t:"Check in for the flight down",s:"Opens 05:45 the day before, in the Air Canada app.",when:"Mar 31"},
+  {id:"balance",t:"Pay the GCBC balance",s:"US$2,470.36 (second half of US$4,940.73).",when:"Apr 1",hot:true},
+  {id:"checkin2",t:"Check in for the flight home",s:"Opens 14:25 St. Martin time.",when:"Apr 9"}
+ ],
+ packing:[
+  {id:"pods",t:"Nespresso pods",s:"The room only provides four."},
+  {id:"crackers",t:"Crackers from home",s:"Mary's or rice crackers. Buy chèvre at Super U."},
+  {id:"shoes",t:"Real walking shoes",s:"Sentier des Froussards is rocky in spots."},
+  {id:"protein",t:"Protein bars (15 g+ protein, low sugar)",s:"For the pre-breakfast protein preload."},
+  {id:"plug",t:"Plug adapter",s:"The French side normally uses European plugs. Ask GCBC if the room has North American outlets."}
+ ]
+};
+/* Saved on this phone only. Each list keeps a one-step undo of its last change. */
+const LSK="stm27-lists-v1";
+function lsGet(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f;}catch(e){return f;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}}
+let store=lsGet(LSK,null);if(!store||typeof store!=="object")store={};
+Object.keys(LISTS).forEach(n=>{const x=store[n]||{};store[n]={checks:x.checks&&typeof x.checks==="object"?x.checks:{},extras:Array.isArray(x.extras)?x.extras:[],hidden:Array.isArray(x.hidden)?x.hidden:[],undo:x.undo&&x.undo.state?x.undo:null};});
+function syncNote(t){document.querySelectorAll("[data-sync]").forEach(n=>n.textContent=t);}
+function save(){if(!lsSet(LSK,store))syncNote("This phone isn't letting the app save. Changes may be lost when you close it.");}
+function short(t){return t.length>34?t.slice(0,32)+"…":t;}
+function snap(n){const x=store[n];return JSON.parse(JSON.stringify({checks:x.checks,extras:x.extras,hidden:x.hidden}));}
+function change(n,label,fn){const before=snap(n);fn(store[n]);store[n].undo={label,state:before};save();renderList(n);}
+function undo(n){const u=store[n].undo;if(!u)return;store[n].checks=u.state.checks;store[n].extras=u.state.extras;store[n].hidden=u.state.hidden;store[n].undo=null;save();renderList(n);toast("Undone");}
+function itemsOf(n){const x=store[n];return LISTS[n].filter(i=>!x.hidden.includes(i.id)).concat(x.extras.map(i=>({id:i.id,t:i.t,custom:true})));}
+function renderList(name){
+  const x=store[name];const ul=$("#list-"+name);ul.textContent="";
+  const items=itemsOf(name);let done=0;
+  items.forEach(it=>{
+    const on=!!x.checks[it.id];if(on)done++;
+    const cb=el("input",{type:"checkbox",id:"c-"+name+"-"+it.id});cb.checked=on;
+    cb.addEventListener("change",()=>{const v=cb.checked;change(name,(v?"ticked “":"unticked “")+short(it.t)+"”",st=>{if(v)st.checks[it.id]=true;else delete st.checks[it.id];});});
+    const tx=el("span",{class:"tx"},el("b",{text:it.t}));
+    if(it.s)tx.append(el("small",{text:it.s}));
+    if(it.sub)tx.append(el("ul",null,it.sub.map(t=>el("li",{text:t}))));
+    const meta=el("span",{class:"meta"});
+    if(it.when)meta.append(el("span",{class:"pill"+(it.hot?" rust":""),text:it.when}));
+    if(it.custom)meta.append(el("span",{class:"pill",text:"Added"}));
+    if(meta.childNodes.length)tx.append(meta);
+    const li=el("li",{class:on?"done":""},el("label",{for:cb.id},cb,tx));
+    const del=el("button",{class:"del",type:"button","aria-label":"Remove "+it.t,text:"×"});
+    del.addEventListener("click",()=>{change(name,"removed “"+short(it.t)+"”",st=>{if(it.custom)st.extras=st.extras.filter(e=>e.id!==it.id);else if(!st.hidden.includes(it.id))st.hidden.push(it.id);delete st.checks[it.id];});toast("Removed. Tap Undo to bring it back.");});
+    li.append(del);ul.append(li);
+  });
+  if(!items.length)ul.append(el("li",{class:"empty",text:"Nothing here yet. Add something below."}));
+  $("#cnt-"+name).textContent=done+" of "+items.length+" done";
+  $("#bar-"+name).style.width=(items.length?done/items.length*100:0)+"%";
+  const ub=document.querySelector('[data-undo="'+name+'"]');
+  if(ub){if(x.undo){ub.hidden=false;ub.textContent="↶ Undo: "+x.undo.label;}else ub.hidden=true;}
+}
+function renderAll(){Object.keys(LISTS).forEach(renderList);}
+function toast(m){document.querySelectorAll(".toast").forEach(t=>t.remove());const t=el("div",{class:"toast",role:"status",text:m});document.body.append(t);setTimeout(()=>t.remove(),2600);}
+document.querySelectorAll("form.add[data-list]").forEach(f=>f.addEventListener("submit",e=>{e.preventDefault();const i=f.querySelector("input");const v=i.value.trim();if(!v)return;const n=f.dataset.list;const id="x"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);change(n,"added “"+short(v)+"”",st=>st.extras.push({id,t:v,at:Date.now()}));i.value="";}));
+document.querySelectorAll("[data-undo]").forEach(b=>b.addEventListener("click",()=>undo(b.dataset.undo)));
+renderAll();
+
+/* food */
+const GC=", Grand Case, Saint-Martin";
+const FOOD=[
+ {m:"Breakfast",n:"GCBC breakfast",p:"€15",d:"Pancakes + cappuccino. Sunset Café breakfast 7:30–10:30 AM.",tags:["On site"],q:"Sunset Cafe Grand Case Beach Club"},
+ {m:"Breakfast",n:"Sunset Cafe iced cappuccino",p:"~$12 CAD",d:"Likely the dessert-style one; mocha syrup can be added. Tax not confirmed.",tags:["On site"],q:"Sunset Cafe Grand Case Beach Club"},
+ {m:"Breakfast",n:"Rainbow Cafe",p:"",d:"Gorgeous rooftop patio for breakfast. Lunch/dinner may not be upstairs.",tags:[],q:"Rainbow Cafe"+GC},
+ {m:"Breakfast",n:"La Cantine",p:"$8.30 / $7 CAD",d:"Fruit salad $8.30 · Nutella banana crepe $7.",tags:[],q:"La Cantine"+GC},
+ {m:"Breakfast",n:"Grocery breakfast",p:"",d:"Whole wheat toast, eggs, avocado. Cheese for sunset from Super U.",tags:["DIY"],q:"Super U, Saint-Martin"},
+ {m:"Lunch",n:"GCBC lunch",p:"€18 each",d:"Sunset Café lunch 12–4 PM.",tags:["On site"],q:"Sunset Cafe Grand Case Beach Club"},
+ {m:"Lunch",n:"Bisou Sucré",p:"$36 CAD",d:"Order ahead for pickup: 2 sandwiches + 2 almond croissants.",link:"https://bisousucre.com/en/panier/",tags:["Pickup"],q:"Bisou Sucré, Saint-Martin"},
+ {m:"Lunch",n:"Memento food truck",p:"",d:"Gourmet fish incl. fish tacos; servings look small.",tags:[],q:"Memento food truck, Saint-Martin"},
+ {m:"Lunch",n:"Zee Best Bakeshop",p:"",d:"Right outside the airport: frappuccinos and sandwiches. Need to drive.",tags:["Near airport"],q:"Zee Best Bakeshop, Sint Maarten"},
+ {m:"Delivery",n:"Go Beach Food",p:"$65 CAD",d:"Two pizzas, delivered.",tags:["Delivery"],q:"Go Beach Food, Saint-Martin"},
+ {m:"Delivery",n:"Loaded fries ×2",p:"$58 CAD",d:"Mozzarella, cheddar + salmon, shrimp or chicken; burger, garlic or ranch sauce. Vendor not named in notes.",tags:["Delivery"]},
+ {m:"Dinner",n:"Lolos shrimp plate",p:"$50 CAD + tip",d:"$24 CAD per person. Get it as takeaway.",tags:["Takeaway"],q:"Lolos"+GC},
+ {m:"Dinner",n:"Calmos Cafe",p:"~$100 CAD + tip",d:"Drinks not included. Tip noted as ~$5.",tags:[],q:"Calmos Cafe"+GC},
+ {m:"Dinner",n:"Sunset Cafe",p:"~$100 CAD + tip",d:"Includes drinks. Dinner 5–9 PM. Book through the front desk: +590 590 87 51 87.",tags:["On site"],q:"Sunset Cafe Grand Case Beach Club"},
+ {m:"Dinner",n:"La Villa",p:"~$145 CAD",d:"Example total with tax and tip. Listed as closed Wednesdays, dinner from 5 PM.",tags:[],q:"La Villa restaurant"+GC},
+ {m:"Treats",n:"Quai 58",p:"",d:"Has “coffee” ice cream. (Spelled “Quia 58” in our notes.)",tags:[],q:"Quai 58"+GC}
+];
+function mapPills(q,from){
+  const m="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+  let d="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q);
+  if(from)d+="&origin="+encodeURIComponent(from);
+  return [el("a",{class:"pill",href:m,target:"_blank",rel:"noopener",text:"Map"}),el("a",{class:"pill",href:d,target:"_blank",rel:"noopener",text:"Directions"})];
+}
+document.querySelectorAll("[data-map]").forEach(n=>mapPills(n.dataset.map,n.dataset.from).forEach(a=>n.append(a)));
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-copy]");if(!b)return;const v=b.dataset.copy;let p;
+  try{p=navigator.clipboard.writeText(v);}catch(err){}
+  if(p)p.then(()=>toast("Copied "+v),()=>toast("Press and hold to copy"));else toast("Press and hold to copy");
+});
+const CATS=["All","Breakfast","Lunch","Dinner","Delivery","Treats"];
+let cat="All";try{const c=sessionStorage.getItem("stm-food");if(CATS.includes(c))cat=c;}catch(e){}
+function renderFood(){
+  const f=$("#filters");f.textContent="";
+  CATS.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c===cat),text:c});b.addEventListener("click",()=>{cat=c;try{sessionStorage.setItem("stm-food",c);}catch(e){}renderFood();});f.append(b);});
+  const ul=$("#food");ul.textContent="";
+  FOOD.filter(x=>cat==="All"||x.m===cat).forEach(x=>{
+    const ds=el("div",{class:"ds",text:x.d});
+    const tg=el("div",{class:"tg"},el("span",{class:"pill",text:x.m}),x.tags.map(t=>el("span",{class:"pill sea",text:t})));
+    if(x.link)tg.append(el("a",{class:"pill dark",href:x.link,target:"_blank",rel:"noopener",text:"Order"}));
+    if(x.q)mapPills(x.q).forEach(a=>tg.append(a));
+    ul.append(el("li",null,el("div",{class:"nm",text:x.n}),el("div",{class:"pr",text:x.p}),x.d?ds:null,tg));
+  });
+}
+renderFood();
+
+/* places */
+const PLACES=[
+ {sc:"beach",tag:"At the hotel",n:"Grand Case beach",m:"Walk out the door",d:"Heard to be nicer than Pinel Island's beaches, which are crowded.",q:"Grand Case Beach, Saint-Martin"},
+ {sc:"bay",tag:"Idea",n:"Orient Bay",m:"Morning or afternoon",d:"Maybe with the main viewpoint and chairlift.",q:"Orient Bay Beach, Saint-Martin"},
+ {sc:"beach",tag:"Idea",n:"Friar's & Happy Bay",m:"10–15 min walk between",d:"On the way to Marigot. Happy Bay: undeveloped, no facilities, clothing-optional.",q:"Friar's Bay Beach, Saint-Martin"},
+ {sc:"town",tag:"Idea",n:"Marigot",m:"Taxi · not Sunday",d:"French-side shops are mostly closed on Sundays.",q:"Marigot, Saint-Martin"},
+ {sc:"hills",tag:"Best fit",n:"Sentier des Froussards",m:"~45 min each way",d:"Anse Marcel to Petites Cayes. Wild beach, views to Anguilla. No shade, go early; wear real shoes.",q:"Anse Marcel, Saint-Martin"},
+ {sc:"hills",tag:"Runner-up",n:"Guana Bay trail",m:"~1–1.25 hrs, sunrise",d:"Shortened: out to the lookouts and back. Some steep bits and loose rock.",q:"Guana Bay, Sint Maarten"},
+ {sc:"hills",tag:"Gentle",n:"Loterie Farm",m:"~45 min, shaded",d:"The Source walk, plus the pool and lunch. Confirm it's running.",q:"Loterie Farm, Saint-Martin"}
+];
+(function(){const box=$("#places");
+  PLACES.forEach(p=>{const a=el("div",{class:"arch"});a.insertAdjacentHTML("afterbegin",scene(p.sc));a.append(el("span",{class:"pill",text:p.tag}));
+    box.append(el("div",{class:"place"},a,el("h3",{text:p.n}),el("div",{class:"meta",text:p.m}),el("p",{text:p.d}),el("div",{class:"links",style:"justify-content:center"},mapPills(p.q))));});
+})();
+
+/* drivers */
+const DRIVERS=[
+ {n:"Guillermo Simmons",co:"Gizmo Tours",tag:"First choice",d:"Strongest repeated Facebook word-of-mouth; customized itineraries."},
+ {n:"Larry",co:"Movements Taxi Service",tag:"First choice",d:"Anecdotal: ~US$150 / 3 hrs, $180 / 4 hrs, $225 / 5 hrs.",ph:"+1 721-553-0122",wa:"17215530122"},
+ {n:"John",co:"Recommended on Reddit",tag:"Backup",d:"Reliable; “will not overcharge.”",ph:"+1 721-522-0023",wa:"17215220023"},
+ {n:"Joylon Bart",co:"Taxi #496",tag:"Option",d:"Airport pickup and drop-off, personal driver for island trips. Recommended on Facebook by someone who's known him a long time.",ph:"+1 721-580-5942",wa:"17215805942",more:[["Work","+1 721-553-1768"],["Work","+1 721-523-7027"]]},
+ {n:"Comfort Rydez",co:"VIP Services",tag:"Option",d:"VIP car service, seen in a Facebook ad.",ph:"+1 721-581-3606"},
+ {n:"Micka",co:"SxM Guided Tours",tag:"Less of a fit",d:"Mickael Dellion. More guide/tour-oriented than what we want."},
+ {n:"Rudy Taxi",co:"SXM Rudy Taxi Service",tag:"Also",d:"Airport pickup, group tours, transportation.",ph:"+1 721-586-5015",links:[["Website","https://www.sxmrudytaxi.com/"],["Facebook","https://www.facebook.com/profile.php?id=100080740910905"]]}
+];
+(function(){const box=$("#drivers");
+  DRIVERS.forEach(x=>{
+    const c=el("div",{class:"card"});
+    c.append(el("div",{style:"display:flex;justify-content:space-between;gap:10px;align-items:flex-start"},el("div",null,el("h3",{text:x.n}),el("div",{class:"caps",text:x.co,style:"margin-top:3px"})),el("span",{class:"pill"+(x.tag==="First choice"?" sea":""),text:x.tag})));
+    c.append(el("p",{class:"small",text:x.d}));
+    const ct=el("div",{class:"contact"});
+    if(x.ph){
+      ct.append(el("span",{class:"phone",text:x.ph}));
+      const b=el("button",{class:"pill",type:"button",text:"Copy"});
+      b.addEventListener("click",()=>{let p;try{p=navigator.clipboard.writeText(x.ph);}catch(e){}if(p)p.then(()=>toast("Copied "+x.ph),()=>toast("Press and hold the number to copy"));else toast("Press and hold the number to copy");});
+      ct.append(b);
+      if(x.wa)ct.append(el("a",{class:"pill dark",href:"https://wa.me/"+x.wa,target:"_blank",rel:"noopener",text:"WhatsApp"}));
+    } else ct.append(el("span",{class:"pill rust",text:"No number saved"}));
+    (x.links||[]).forEach(l=>ct.append(el("a",{class:"pill",href:l[1],target:"_blank",rel:"noopener",text:l[0]})));
+    c.append(ct);
+    (x.more||[]).forEach(([l,n])=>c.append(el("div",{class:"contact"},el("span",{class:"small muted",text:l}),el("span",{class:"phone",text:n}),el("button",{class:"pill",type:"button","data-copy":n,text:"Copy"}))));
+    box.append(c);
+  });
+})();
+
+/* tap to call */
+function telOf(n){return "tel:"+n.replace(/[^\d+]/g,"");}
+document.querySelectorAll(".phone").forEach(p=>{if(p.hasAttribute("data-nocall")||p.classList.contains("big"))return;const n=p.textContent.trim();if(!/^\+?\d[\d\s-]{5,}$/.test(n))return;p.after(el("a",{class:"pill dark",href:telOf(n),text:"Call"}));});
+
+/* now card on home: coming up, travel days, today during the trip */
+const STEPS_OUT=[
+ ["Mar 31 · 05:45","Check-in opens. Each of us checks in on our own Air Canada app, then adds our boarding passes to Wallet."],
+ ["Mar 31","Arrival card done for both of us?"],
+ ["Mar 31","Passports, phones and chargers in the personal item."],
+ ["~04:00","Be at Ottawa airport (our suggestion). Bag drop closes at 04:45."],
+ ["05:45","AC 7762 to Montréal"],
+ ["08:00","At the gate in Montréal. Breakfast first at Livia, near gate 52."],
+ ["08:45","AC 2108 to St. Maarten · seats 15E & 15F"],
+ ["13:20","Land. Passports out. Walk outside for a cab, about US$40."],
+ ["4 PM","Hotel check-in. Pay the balance: US$2,470.36."]
+];
+const STEPS_HOME=[
+ ["Apr 9 · 14:25","Check-in opens. Check in on the app and add boarding passes to Wallet."],
+ ["11:00","Check out (list below), then cab to the airport."],
+ ["11:25","Bag drop opens at SXM."],
+ ["13:25","Check-in and bag drop close."],
+ ["13:40","Be at the gate."],
+ ["14:25","AC 2109 to Montréal · seats 16E & 16F"],
+ ["19:20","Land in Montréal. Customs here."],
+ ["21:35","AC 7777 to Ottawa"],
+ ["22:26","Home in Ottawa"]
+];
+function stepList(a){return el("ul",{class:"steps"},a.map(([t,x])=>el("li",null,el("span",{class:"t",text:t}),el("span",{text:x}))));}
+function walletLinks(extra){const lk=el("div",{class:"links"});lk.append(el("a",{class:"pill dark","data-wallet":"",href:"https://wallet.google.com/",text:"Open Wallet"}),el("a",{class:"pill","data-acapp":"",href:"https://play.google.com/store/apps/details?id=com.aircanada",target:"_blank",rel:"noopener",text:"Air Canada app"}));(extra||[]).forEach(x=>lk.append(x));return lk;}
+(function(){
+  const box=$("#now");const n=TRIPN;
+  if(n>=0&&n<=2){
+    box.className="now";
+    box.append(el("span",{class:"caps",text:n===0?"Today":"Coming up"}),el("h2",{text:n===0?"Travel day":n===1?"We fly tomorrow":"We fly in 2 days"}),stepList(STEPS_OUT),
+      walletLinks([el("a",{class:"pill",href:"#arrival",text:"Arrival card"})].concat(mapPills("Grand Case Beach Club, Grand Case, Saint-Martin","Princess Juliana International Airport").slice(1))));
+  } else if(n===-8||n===-9){
+    box.className="now";
+    box.append(el("span",{class:"caps",text:n===-9?"Today":"Tomorrow"}),el("h2",{text:"Flying home"}),stepList(STEPS_HOME),
+      el("span",{class:"caps",style:"margin-top:6px",text:"Check-out list"}),el("ul",{style:"margin:0;padding-left:18px"},CHECKOUT.map(t=>el("li",{text:t}))),walletLinks());
+  } else if(n<0&&n>-8){
+    const d=DAYS[1-n-1];
+    box.className="now";
+    box.append(el("span",{class:"caps",text:"Today · "+d.lbl}),el("h2",{text:d.title.split(" · ")[1]||d.title}),
+      el("div",{class:"links"},el("a",{class:"pill dark",href:"#schedule",text:"Today's plan"}),el("a",{class:"pill",href:WEATHER,target:"_blank",rel:"noopener",text:"Weather"})));
+  } else if(n>2){
+    const next=DATES.filter(x=>daysTo(x.d)>=0).slice(0,2);
+    if(next.length){
+      box.className="now";
+      box.append(el("span",{class:"caps",text:"Coming up"}));
+      next.forEach(x=>{const k=daysTo(x.d);box.append(el("div",{class:"upnext"},el("div",{class:"cal"},el("b",{text:x.m}),el("span",{text:x.n})),el("div",null,el("b",{text:x.t,style:"font-weight:500"}),el("div",{class:"small muted",text:(k===0?"Today":k===1?"Tomorrow":"In "+k+" days")+" · "+x.s}))));});
+      box.append(el("a",{class:"pill",href:"#schedule",style:"align-self:flex-start",text:"All dates"}));
+    }
+  }
+})();
+
+/* wallet + Air Canada app: right store and wallet for each phone */
+(function(){
+  const ua=navigator.userAgent;
+  const isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  const isAndroid=/Android/i.test(ua);
+  const AC=isIOS?"https://apps.apple.com/ca/app/id326459697":"https://play.google.com/store/apps/details?id=com.aircanada";
+  document.querySelectorAll("[data-acapp]").forEach(a=>{a.href=AC;a.target="_blank";a.rel="noopener";});
+  const W=isIOS?"shoebox://":isAndroid?"intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.google.android.apps.walletnfcrel;S.browser_fallback_url=https%3A%2F%2Fwallet.google.com%2F;end":"https://wallet.google.com/";
+  document.querySelectorAll("[data-wallet]").forEach(a=>{a.href=W;a.textContent=isIOS?"Open Apple Wallet":"Open Google Wallet";if(!isIOS&&!isAndroid){a.target="_blank";a.rel="noopener";}});
+  document.querySelectorAll("[data-wallet-tip]").forEach(p=>p.textContent=isIOS?"If the button doesn't open Wallet: double-click the side button.":"If the button doesn't open Wallet: open the Google Wallet app from your home screen.");
+})();
+
+/* travel insurance number, saved on this phone */
+(function(){
+  const K="stm27-insurance",f=$("#ins-form"),i=$("#ins"),show=$("#ins-show");
+  function paint(){let v="";try{v=localStorage.getItem(K)||"";}catch(e){}
+    f.hidden=!!v;show.hidden=!v;if(v){$("#ins-num").textContent=v;$("#ins-call").href=telOf(v);}}
+  f.addEventListener("submit",e=>{e.preventDefault();const v=i.value.trim();if(!v)return;try{localStorage.setItem(K,v);}catch(err){toast("This phone isn't letting the app save.");}paint();});
+  $("#ins-edit").addEventListener("click",()=>{let v="";try{v=localStorage.getItem(K)||"";localStorage.removeItem(K);}catch(e){}i.value=v;paint();i.focus();});
+  paint();
+})();
+
+/* works without internet once opened */
+if("serviceWorker" in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("sw.js").catch(()=>{});}
+
+/* routing */
+const IDS=["home","help"].concat(SECTIONS.map(s=>s[0]));
+function show(){
+  let h=location.hash.slice(1);if(!IDS.includes(h))h="home";
+  IDS.forEach(id=>{$("#s-"+id).hidden=id!==h;});
+  dock.hidden=h==="home";
+  dock.querySelectorAll("a").forEach(a=>{if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+}
+window.addEventListener("hashchange",()=>{show();window.scrollTo(0,0);});
+show();
+})();
+</script>
+
+</body></html>
