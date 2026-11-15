@@ -75,6 +75,8 @@ p{margin:0}
 .arch{border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/4.4;max-width:100%;position:relative;background:var(--greige)}
 .arch svg{display:block;width:100%;height:100%}
 .arch.wide{aspect-ratio:4/3.2;border-radius:160px 160px 22px 22px}
+.arch img{display:block;width:100%;height:100%;object-fit:cover}
+.home-hero{margin:20px auto 4px}
 .pill{display:inline-flex;align-items:center;gap:6px;background:var(--greige);color:var(--taupe);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:99px;border:0;text-decoration:none;white-space:nowrap}
 .pill.dark{background:var(--ink);color:var(--paper)}
 .pill.sea{background:#D7EAE6;color:#2D7069}
@@ -235,6 +237,7 @@ button.pill,a.pill{cursor:pointer}
   <div class="g home-head">
     <h1>St. Martin</h1>
     <span class="script">Travel Guide</span>
+    <div class="arch wide home-hero"><img src="img/gcbc-hero.jpg" width="1400" height="1050" alt="Grand Case Beach Club from the air: the beach, pool and restaurant on the point, with green hills behind" fetchpriority="high"></div>
     <div class="caps" style="margin-top:14px">Grand Case · French side</div>
     <div class="home-count" id="count"><b id="cd-n">—</b><span id="cd-l">days to go</span></div>
   </div>
@@ -244,7 +247,7 @@ button.pill,a.pill{cursor:pointer}
   </div>
   <div class="g" style="padding-top:22px"><a class="helpbtn" href="#help"><svg class="ico" aria-hidden="true"><use href="#i-help"/></svg>Emergency &amp; documents</a></div>
   <p class="g home-foot caps">Tap an icon</p>
-  <p class="g home-foot small muted" style="padding-top:0">Version 2026-11-14a</p>
+  <p class="g home-foot small muted" style="padding-top:0">Version 2026-11-15a</p>
 </section>
 
 <!-- SCHEDULE -->
@@ -256,6 +259,7 @@ button.pill,a.pill{cursor:pointer}
     <div class="card" id="day-card" aria-live="polite"></div>
     <h2 class="sec">Before we go</h2>
     <ul class="dates" id="dates"></ul>
+    <div class="arch wide"><img src="img/gcbc-deck.jpg" width="1100" height="733" loading="lazy" alt="Loungers under a thatched umbrella on the deck, looking across the turquoise bay to the hotel"></div>
   </div>
 </section>
 
@@ -264,7 +268,7 @@ button.pill,a.pill{cursor:pointer}
   <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="kicker">Air Canada</span></div>
   <div class="g ttl"><h1>Flight</h1><span class="script">Details</span></div>
   <div class="g stack">
-    <div class="arch wide" data-scene="bay"></div>
+    <div class="arch wide"><img src="img/gcbc-beach.jpg" width="1100" height="618" loading="lazy" alt="The curved beach at Grand Case Beach Club with swimmers and green hills" style="object-position:38% 50%"></div>
     <div class="info">
       <div><div class="k">Booking</div><div class="v">In our Air Canada email</div></div>
       <div><div class="k">Fare</div><div class="v">Economy Basic</div></div>
@@ -352,7 +356,7 @@ button.pill,a.pill{cursor:pointer}
     <div>
       <div class="g topbar" style="justify-content:flex-end"><a class="burger" href="#home" aria-label="Back to menu" style="margin:0 -8px 0 0"><span></span><span></span><span></span></a></div>
       <div class="g stack" style="padding-top:0">
-        <div class="arch" data-scene="beach"></div>
+        <div class="arch"><img src="img/gcbc-hotel.jpg" width="1100" height="825" loading="lazy" alt="Grand Case Beach Club's red-roofed buildings along the bay, from the air" style="object-position:40% 50%"></div>
         <div class="info">
           <div><div class="k">Check in</div><div class="v">Thu Apr 1 · from 4 PM</div></div>
           <div><div class="k">Check out</div><div class="v">Sat Apr 10 · 11 AM</div></div>
@@ -416,6 +420,7 @@ button.pill,a.pill{cursor:pointer}
     <form class="add" data-list="packing"><input id="add-packing" placeholder="Add something to pack" aria-label="Add something to pack" maxlength="200"><button class="btn" type="submit">Add</button></form>
     <button class="btn ghost" type="button" data-undo="packing" hidden></button>
     <p class="sync" data-sync>Saved on this phone only. Your list and Mom's are separate.</p>
+    <div class="arch wide"><img src="img/gcbc-pool.jpg" width="1100" height="733" loading="lazy" alt="The hotel pool with loungers, palms and the sea behind"></div>
   </div>
 </section>
 
@@ -473,7 +478,7 @@ button.pill,a.pill{cursor:pointer}
   <div class="g topbar"><a class="burger" href="#home" aria-label="Back to menu"><span></span><span></span><span></span></a><span class="pill sea">Booked</span></div>
   <div class="g ttl"><h1>Boat</h1><span class="script">Day</span><p>No1SXM Afternoon Snorkel &amp; Sunset Sail</p></div>
   <div class="g stack">
-    <div class="arch wide" data-scene="sunset"></div>
+    <div class="arch wide"><img src="img/boat.webp" width="1100" height="825" loading="lazy" alt="Bow of a sailing trimaran anchored in turquoise water off a sandy beach" style="object-position:60% 50%"></div>
     <div class="info">
       <div><div class="k">Date</div><div class="v">Sun April 4</div></div>
       <div><div class="k">Check in</div><div class="v">2:45 PM</div></div>
