@@ -1,6 +1,6 @@
 /* Keeps the guide working without internet. Pages: try the network first (so updates show up),
    fall back to the saved copy after 4 seconds or when offline. Fonts: saved copy first. */
-const V = "stm27-2026-11-15b";
+const V = "stm27-2026-11-15c";
 const CORE = ["./", "index.html", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png",
   "img/gcbc-hero.jpg", "img/gcbc-hotel.jpg", "img/gcbc-beach.jpg", "img/gcbc-deck.jpg", "img/gcbc-pool.jpg", "img/boat.webp"];
 

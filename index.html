@@ -247,7 +247,7 @@ button.pill,a.pill{cursor:pointer}
   </div>
   <div class="g" style="padding-top:22px"><a class="helpbtn" href="#help"><svg class="ico" aria-hidden="true"><use href="#i-help"/></svg>Emergency &amp; documents</a></div>
   <p class="g home-foot caps">Tap an icon</p>
-  <p class="g home-foot small muted" style="padding-top:0">Version 2026-11-15b</p>
+  <p class="g home-foot small muted" style="padding-top:0">Version 2026-11-15c</p>
 </section>
 
 <!-- SCHEDULE -->
@@ -943,8 +943,7 @@ renderFood();
 
 /* places */
 const PLACES=[
- {sc:"beach",tag:"At the hotel",n:"Grand Case beach",m:"Walk out the door",d:"Heard to be nicer than Pinel Island's beaches, which are crowded.",q:"Grand Case Beach, Saint-Martin"},
- {sc:"bay",tag:"Idea",n:"Orient Bay",m:"Morning or afternoon",d:"Maybe with the main viewpoint and chairlift.",q:"Orient Bay Beach, Saint-Martin"},
+ {sc:"bay",tag:"Idea",n:"Orient Bay",m:"Morning or afternoon",d:"",q:"Orient Bay Beach, Saint-Martin"},
  {sc:"beach",tag:"Idea",n:"Friar's & Happy Bay",m:"10–15 min walk between",d:"On the way to Marigot. Happy Bay: undeveloped, no facilities, clothing-optional.",q:"Friar's Bay Beach, Saint-Martin"},
  {sc:"town",tag:"Idea",n:"Marigot",m:"Taxi · not Sunday",d:"French-side shops are mostly closed on Sundays.",q:"Marigot, Saint-Martin"},
  {sc:"hills",tag:"Best fit",n:"Sentier des Froussards",m:"~45 min each way",d:"Anse Marcel to Petites Cayes. Wild beach, views to Anguilla. No shade, go early; wear real shoes.",q:"Anse Marcel, Saint-Martin"},
@@ -953,7 +952,7 @@ const PLACES=[
 ];
 (function(){const box=$("#places");
   PLACES.forEach(p=>{const a=el("div",{class:"arch"});a.insertAdjacentHTML("afterbegin",scene(p.sc));a.append(el("span",{class:"pill",text:p.tag}));
-    box.append(el("div",{class:"place"},a,el("h3",{text:p.n}),el("div",{class:"meta",text:p.m}),el("p",{text:p.d}),el("div",{class:"links",style:"justify-content:center"},mapPills(p.q))));});
+    box.append(el("div",{class:"place"},a,el("h3",{text:p.n}),el("div",{class:"meta",text:p.m}),p.d?el("p",{text:p.d}):[],el("div",{class:"links",style:"justify-content:center"},mapPills(p.q))));});
 })();
 
 /* drivers */
